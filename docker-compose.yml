@@ -1,0 +1,44 @@
+#version: '3.8'
+
+services:
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: petshop-backend
+    env_file:
+      - ./backend/.env            # suas variáveis de ambiente
+    volumes:
+      - ./backend:/app
+      - static_volume:/vol/static
+      - media_volume:/vol/media
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: petshop-frontend
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"
+    volumes:
+      - static_volume:/vol/static
+      - media_volume:/vol/media
+  # (Opcional) banco de dados, se não usar SQLite
+  # db:
+  #   image: postgres:15
+  #   environment:
+  #     POSTGRES_USER: user
+  #     POSTGRES_PASSWORD: pass
+  #     POSTGRES_DB: petshop
+  #   volumes:
+  #     - pgdata:/var/lib/postgresql/data
+
+
+  # pgdata:
+volumes:
+  static_volume:
+  media_volume:

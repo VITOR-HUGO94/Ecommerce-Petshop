@@ -1,0 +1,35 @@
+# Arquivos de Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Ambientes Virtuais (Python)
+.env
+venv/
+env/
+
+# Django / Python
+*.pyc
+__pycache__/
+celerybeat.pid
+*.sqlite3 # Banco de dados SQLite
+media/    # Pasta para uploads de arquivos (se você tiver uma pasta "media" separada no Django)
+static_collected/ # Pasta para arquivos estáticos coletados (se você usar collectstatic)
+*.log     # Arquivos de log
+
+# Node.js / React
+node_modules/
+build/           # Pasta de build do React (gerada para produção)
+.env.local       # Variáveis de ambiente locais para o frontend
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Docker
+docker-compose.override.yml # Usado para configurações locais que não devem ir para produção
+*.log                     # Logs de Docker
+
+# IDEs (se usar alguma específica)
+.idea/ # Para projetos PyCharm/IntelliJ
+.vscode/ # Para VS Code
+
+text.txt
