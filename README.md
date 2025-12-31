@@ -12,8 +12,6 @@ Interface moderna e responsiva
 
 Carrinho de compras com controle de quantidade
 
-Cálculo de frete por CEP
-
 Checkout integrado com Mercado Pago
 
 Backend em API REST
